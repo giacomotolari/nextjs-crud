@@ -5,5 +5,6 @@ export default async function getPost(postId ) {
   });
   if (!response.ok) throw new Error("failed to fetch the post");
 
+
   return await response.json();
 }
