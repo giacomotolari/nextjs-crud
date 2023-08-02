@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": ">=14.20.1"
+    "node": ">=16.8.0"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
