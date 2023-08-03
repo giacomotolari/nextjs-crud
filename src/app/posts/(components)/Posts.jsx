@@ -1,3 +1,4 @@
+"use client";
 import getAllPosts from "../../../lib/CRUD/getAllPosts";
 import PostContainer from "./PostContainer";
 
