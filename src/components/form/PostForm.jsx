@@ -119,7 +119,7 @@ export default function PostForm({
           />
         </div>
         <button
-          className="w-full mt-4 p-3 border border-slate-400 bg-green-700 text-white font-bold"
+          className="w-full mt-4 p-3 border border-slate-400 bg-green-700 text-white font-bold hover:bg-green-500"
           type="submit"
           disabled={state.isLoading}
         >
