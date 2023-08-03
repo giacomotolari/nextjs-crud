@@ -1,7 +1,8 @@
-import getAllPosts from "../lib/CRUD/getAllPosts";
+// import getAllPosts from "../lib/CRUD/getAllPosts";
 
 export default async function Loading() {
-  const posts = await getAllPosts();
+  // const posts = await getAllPosts();
+  const posts = [];
   return (
     <div className="p-8 max-w-3xl mx-auto skeleton-container">
       <button className="ml-4 pl-1 pr-1 rounded-lg h-6 w-6 border skeleton-loading"></button>
