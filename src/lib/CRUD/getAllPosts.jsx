@@ -1,13 +1,20 @@
 import { BACKEND_URL } from "../URL";
 
 export default async function getAllPosts() {
-  const response = await fetch(`${BACKEND_URL}/api/posts`, {
-    method: "GET",
-    cache: "no-store", // avoid static data cache because we want to see new posts if added,
-  });
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/posts`, {
+      method: "GET",
+      cache: "no-store", // avoid static data cache because we want to see new posts if added,
+    });
 
-  if (!response.ok) throw new Error("failed to fetch the posts");
+    if (!response.ok) {
+      throw new Error("Failed to fetch the posts");
+    }
 
-  return await response.json();
+    return await response.json();
+  } catch (error) {
+    // Handle the error here
+    console.error("Error fetching posts:", error);
+    throw error; // Rethrow the error to propagate it to the caller
+  }
 }
-
