@@ -104,8 +104,8 @@ export default function PostForm({
         <div className="flex flex-col gap-2">
           <label htmlFor="title">Title</label>
           <input
-            className={`shadow-md px-6 py-2 border border-slate-300 ${
-              wrongInput.titleError && "border-red-500"
+            className={`shadow-md px-6 py-2 border ${
+              wrongInput.titleError ? "border-red-500" : "border-slate-300"
             }`}
             type="text"
             id="form-title"
@@ -119,8 +119,8 @@ export default function PostForm({
         <div className="flex flex-col gap-2 mt-4">
           <label htmlFor="text">Text</label>
           <textarea
-            className={`h-32 shadow-md px-6 py-2 border border-slate-300 ${
-              wrongInput.textError && "border-red-500"
+            className={`h-32 shadow-md px-6 py-2 border ${
+              wrongInput.textError ? "border-red-500" : "border-slate-300"
             }`}
             id="form-text"
             placeholder="Type your text here"
