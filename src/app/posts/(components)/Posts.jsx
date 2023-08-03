@@ -1,9 +1,9 @@
-"use client";
 import getAllPosts from "../../../lib/CRUD/getAllPosts";
 import PostContainer from "./PostContainer";
 
 export default async function Posts() {
   const posts = await getAllPosts();
+  console.log("🚀 ~ file: Posts.jsx:6 ~ Posts ~ posts:", posts)
   const reversedPosts = posts.reverse();
 
   if (posts.length === 0)

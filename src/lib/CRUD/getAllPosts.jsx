@@ -6,10 +6,12 @@ export default async function getAllPosts() {
       method: "GET",
       cache: "no-store", // avoid static data cache because we want to see new posts if added,
     });
+    console.log("🚀 ~ file: getAllPosts.jsx:7 ~ getAllPosts ~ response:", response)
 
     if (!response.ok) {
       throw new Error("Failed to fetch the posts");
     }
+    
 
     return await response.json();
   } catch (error) {
