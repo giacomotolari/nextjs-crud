@@ -1,5 +1,5 @@
 "use client";
-import React, { useReducer } from "react";
+import React, { useMemo, useReducer } from "react";
 import { useRouter } from "next/navigation";
 import ErrorMessages from "./ErrorMessages";
 import SendConfirmation from "./SendConfirmation";
@@ -90,13 +90,23 @@ export default function PostForm({
     }
   };
 
+  const wrongInput = useMemo(() => {
+    const errorsToOneString = state.errors.join(" ");
+    const errorsStringLowercase = errorsToOneString.toLowerCase();
+    const titleError = errorsStringLowercase.includes("title");
+    const textError = errorsStringLowercase.includes("text");
+    return { titleError, textError };
+  }, [state.errors]);
+
   return (
     <>
       <form onSubmit={handleSubmit} className="py-4 flex-col gap-5">
         <div className="flex flex-col gap-2">
           <label htmlFor="title">Title</label>
           <input
-            className="shadow-md px-6 py-2 border border-slate-300"
+            className={`shadow-md px-6 py-2 border border-slate-300 ${
+              wrongInput.titleError && "border-red-500"
+            }`}
             type="text"
             id="form-title"
             placeholder="title"
@@ -109,7 +119,9 @@ export default function PostForm({
         <div className="flex flex-col gap-2 mt-4">
           <label htmlFor="text">Text</label>
           <textarea
-            className="h-32 shadow-md px-6 py-2 border border-slate-300"
+            className={`h-32 shadow-md px-6 py-2 border border-slate-300 ${
+              wrongInput.textError && "border-red-500"
+            }`}
             id="form-text"
             placeholder="Type your text here"
             value={state.text}
