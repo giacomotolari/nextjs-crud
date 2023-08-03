@@ -9,5 +9,5 @@ export default function CanEdit({ setIsEditing = undefined }) {
     }
   };
 
-  return <BsFillPenFill className="cursor-pointer" onClick={handleCanEdit} />;
+  return <BsFillPenFill className="cursor-pointer hover:text-blue-500 h-6 w-6" onClick={handleCanEdit} />;
 }

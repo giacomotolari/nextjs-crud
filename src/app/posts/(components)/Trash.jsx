@@ -13,7 +13,7 @@ export default function Trash({ postId }) {
 
   return (
     <BsFillTrashFill
-      className="cursor-pointer"
+      className="cursor-pointer hover:text-red-500 h-6 w-6"
       onClick={() => handleDeletePost(postId)}
     />
   );

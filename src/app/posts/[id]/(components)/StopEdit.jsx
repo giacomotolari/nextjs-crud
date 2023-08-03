@@ -6,5 +6,5 @@ export default function StopEdit({ setIsEditing }) {
     setIsEditing(false);
   };
 
-  return <GrClose className="cursor-pointer" onClick={handleStopEdit} />;
+  return <GrClose className="cursor-pointer hover:text-teal-950 h-6 w-6" onClick={handleStopEdit} />;
 }
