@@ -11,7 +11,7 @@ export default async function getAllPosts() {
     if (!response.ok) {
       throw new Error("Failed to fetch the posts");
     }
-    
+
 
     return await response.json();
   } catch (error) {
@@ -20,3 +20,4 @@ export default async function getAllPosts() {
     throw error; // Rethrow the error to propagate it to the caller
   }
 }
+
